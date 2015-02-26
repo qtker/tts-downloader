@@ -32,5 +32,4 @@ class TtsDownloader():
         reqest = urllib2.Request(url, '', headers=headers)
         response = urllib2.urlopen(reqest)
         mp3_file.write(response.read())
-        time.sleep(.5)
         mp3_file.close()
