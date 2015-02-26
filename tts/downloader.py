@@ -1,8 +1,6 @@
 import urllib2
-import urllib
 import time
 import re
-#http://translate.google.com/translate_tts?tl=en&q=Hello.+Everybody.+How+are+you?+I+am+fine.
 
 
 class TtsDownloader():
