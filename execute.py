@@ -4,4 +4,4 @@
 from tts.downloader import TtsDownloader
 
 tts = TtsDownloader('hello world')
-tts.download(path='/Users/tenoritama/test.mp3')
+tts.download(path='/Users/hogehoge/test.mp3')
