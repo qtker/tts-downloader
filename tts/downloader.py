@@ -1,11 +1,10 @@
 import urllib2
-import time
 import re
 
 
 class TtsDownloader():
 
-    TTS_APT_URL = 'http://translate.google.com/translate_tts?tl=en&q='
+    TTS_API_URL = 'http://translate.google.com/translate_tts?tl=en&q='
 
     def __init__(self, text=''):
         self.params = self.split_string(text)
@@ -16,7 +15,7 @@ class TtsDownloader():
         return tmp
 
     def make_url(self, params=[]):
-        url = self.TTS_APT_URL + '+'.join(params)
+        url = self.TTS_API_URL + '+'.join(params)
         return url
 
     def download(self, url=None, path='/'):
