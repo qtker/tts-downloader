@@ -23,11 +23,7 @@ class TtsDownloader():
             url = self.make_url(self.params)
 
         mp3_file = open(path, 'w')
-        headers = {"Host": "translate.google.com",
-                   "Referer": "http://www.gstatic.com/translate/sound_player2.swf",
-                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) "
-                                 "AppleWebKit/535.19 (KHTML, like Gecko) "
-                                 "Chrome/18.0.1025.163 Safari/535.19"}
+        headers = {"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)"}
         reqest = urllib2.Request(url, '', headers=headers)
         response = urllib2.urlopen(reqest)
         mp3_file.write(response.read())
