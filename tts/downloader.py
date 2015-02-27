@@ -6,19 +6,19 @@ class TtsDownloader():
 
     TTS_API_URL = 'http://translate.google.com/translate_tts?tl=en&q='
 
-    def __init__(self, text=''):
-        self.params = self.split_string(text)
+    def __init__(self, text=None):
+        self.params = self.split_string(text) if text is not None else []
 
     def split_string(self, text):
         tmp = re.sub(r'\s+', ' ', text)
         tmp = tmp.split(" ")
         return tmp
 
-    def make_url(self, params=[]):
+    def make_url(self, params):
         url = self.TTS_API_URL + '+'.join(params)
         return url
 
-    def download(self, url=None, path='/'):
+    def download(self, path='/', url=None):
         if url is None:
             url = self.make_url(self.params)
 
