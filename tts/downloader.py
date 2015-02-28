@@ -11,7 +11,7 @@ class TtsDownloader():
 
     def split_string(self, text):
         tmp = re.sub(r'\s+', ' ', text)
-        tmp = tmp.split(" ")
+        tmp = tmp.split(' ')
         return tmp
 
     def make_url(self, params):
