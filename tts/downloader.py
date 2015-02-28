@@ -7,7 +7,8 @@ class TtsDownloader():
     TTS_API_URL = 'http://translate.google.com/translate_tts?tl=en&q='
 
     def __init__(self, text=None):
-        self.params = self.split_string(text) if text is not None else []
+        self.params = self.check_max_char(self.split_string(text))\
+            if text is not None else []
 
     def split_string(self, text):
         tmp = re.sub(r'\s+', ' ', text)
@@ -31,3 +32,9 @@ class TtsDownloader():
         except urllib2.URLError as e:
             print 'url error : %s' % e
         mp3_file.close()
+
+    def check_max_char(self, params):
+        if len(params) > 100:
+            return params[0:100]
+        else:
+            return params
