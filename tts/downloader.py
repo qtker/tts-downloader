@@ -24,7 +24,7 @@ class TtsDownloader():
             url = self.make_url(self.params)
 
         mp3_file = open(path, 'w')
-        headers = {"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)"}
+        headers = {'User-Agent': 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)'}
         request = urllib2.Request(url, '', headers=headers)
         try:
             response = urllib2.urlopen(request)
